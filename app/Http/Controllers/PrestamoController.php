@@ -90,12 +90,12 @@ class PrestamoController extends Controller
         $prestamo = Prestamo::find($id); 
         $prestamo->fecha_hora_devolucion = now();
         $prestamo->estado = 'DEVUELTO';
-        $prestamo->usuario_id = auth()->user()->id;
+        $prestamo->user_id = auth()->user()->id;
         $prestamo->save();
 
         $recurso = Recurso::find($prestamo->recurso_id);
-
-        $recurso->inventario = $prestamo->inventario -1;
+ 
+        $recurso->inventario = $prestamo->inventario  + 1;
         $recurso->save();
         return Redirect::back();
     }

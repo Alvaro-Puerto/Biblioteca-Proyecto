@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->boolean('status')->default(true);
             $table->foreignId('user_id');
-
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

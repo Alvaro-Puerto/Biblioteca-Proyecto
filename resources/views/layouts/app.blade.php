@@ -165,7 +165,7 @@
         $('.js-example-basic-single').select2();
         function buscarPermisos()
         {
-            let url = "{{ route('user.permisos') }}";
+            let url = "/user/permisos";
             fetch(url)
             .then(response => response.json())
             .then(data => {

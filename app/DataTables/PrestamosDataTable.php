@@ -48,6 +48,8 @@ class PrestamosDataTable extends DataTable
                  //'prestamos.updated_at'
                 );
 
+
+        error_log($query->get());
         return $query;
       
     }
